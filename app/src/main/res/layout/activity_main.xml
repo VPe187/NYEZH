@@ -5,9 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/cardview_light_background"
-    >
-
+    android:background="@color/cardview_light_background">
     <ImageView
         android:id="@+id/imageViewBackground"
         android:layout_width="wrap_content"
@@ -21,19 +19,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/background" />
-
     <androidx.cardview.widget.CardView
         android:id="@+id/CardViewSettings"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        app:cardBackgroundColor="#E0FFFFFF"
+        app:cardBackgroundColor="#A0FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
-
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -46,13 +42,12 @@
                 android:id="@+id/textViewSettingsHeader"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:fontFamily="casual"
+                android:background="@color/purple_500"
+                android:fontFamily="serif"
                 android:padding="3dp"
                 android:text="@string/settings"
                 android:textAlignment="center"
-                android:textColor="@color/black" />
-
+                android:textColor="@color/white" />
             <GridLayout
                 android:id="@+id/GridViewParameters"
                 android:layout_width="match_parent"
@@ -70,7 +65,6 @@
                 app:layout_constraintTop_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="@id/textViewSettingsHeader"
                 app:layout_constraintVertical_bias="0.0">
-
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -82,12 +76,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="fill"
-                        android:fontFamily="casual"
-                        android:padding="2dp"
+                        android:fontFamily="serif"
+                        android:padding="5dp"
                         android:text="@string/letters"
                         tools:ignore="UseSwitchCompatOrMaterialXml" />
                 </LinearLayout>
-
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -98,12 +91,11 @@
                         android:id="@+id/switchUppercase"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="casual"
-                        android:padding="2dp"
+                        android:fontFamily="serif"
+                        android:padding="5dp"
                         android:text="@string/uppercase"
-                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+                        tools:ignore="UseSwitchCompatOrMaterialXml"/>
                 </LinearLayout>
-
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -115,8 +107,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="fill"
-                        android:fontFamily="casual"
-                        android:padding="2dp"
+                        android:fontFamily="serif"
+                        android:padding="5dp"
                         android:text="@string/numbers"
                         tools:ignore="UseSwitchCompatOrMaterialXml" />
                 </LinearLayout>
@@ -132,57 +124,106 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="fill"
-                        android:fontFamily="casual"
-                        android:padding="2dp"
+                        android:fontFamily="serif"
+                        android:padding="5dp"
                         android:text="@string/specials"
                         tools:ignore="UseSwitchCompatOrMaterialXml" />
                 </LinearLayout>
 
             </GridLayout>
 
-            <SeekBar
-                android:id="@+id/seekBarPasswordLength"
+            <GridLayout
+                android:id="@+id/GridViewPassLength"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:min="6"
-                android:max="20"/>
+                android:layout_margin="0dp"
+                android:background="#00FFFFFF"
+                android:columnCount="2"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                android:rowCount="1"
+                android:textDirection="ltr"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="@id/textViewSettingsHeader"
+                app:layout_constraintVertical_bias="0.0">
 
+                <SeekBar
+                    android:id="@+id/seekBarPasswordLength"
+                    style="@android:style/Widget.DeviceDefault.SeekBar"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="start|fill|fill_vertical"
+                    android:max="20"
+                    android:min="6"
+                    tools:targetApi="o" />
+
+                <TextView
+                    android:id="@+id/textViewPasswordLength"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/purple_200"
+                    android:fontFamily="serif"
+                    android:gravity="right|left"
+                    android:padding="3dp"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    tools:ignore="RtlCompat,RtlHardcoded" />
+            </GridLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-
     <androidx.cardview.widget.CardView
         android:id="@+id/CardViewGenerate"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        app:cardBackgroundColor="#E0FFFFFF"
+        app:cardBackgroundColor="#A0FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CardViewSettings"
         app:layout_constraintVertical_bias="0.0">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewPasswordHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/purple_500"
+                android:fontFamily="serif"
+                android:padding="3dp"
+                android:text="@string/password"
+                android:textAlignment="center"
+                android:textColor="@color/white" />
+
         <EditText
             android:id="@+id/editTextPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#E0FFFFFF"
-            android:fontFamily="monospace"
+            android:autofillHints="generated password"
+            android:background="#00FFFFFF"
+            android:fontFamily="serif-monospace"
+            android:inputType="text"
+            android:labelFor="@id/editTextPassword"
             android:padding="10dp"
             android:text=""
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:autofillHints="generated password"
-            android:inputType="text"
-            android:labelFor="@id/editTextPassword"
+            app:layout_constraintTop_toTopOf="@+id/textViewPasswordHeader"
             tools:ignore="LabelFor,TextFields" />
-
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
-
     <ProgressBar
-        android:id="@+id/progressBar2"
+        android:id="@+id/progressBarPoints"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -193,21 +234,19 @@
         app:layout_constraintTop_toBottomOf="@+id/CardViewGenerate" />
 
     <Button
-        style="@style/Widget.AppCompat.Button.Colored"
         android:id="@+id/buttonGenerate"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="120dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="120dp"
-        android:background="@color/purple_500"
-        android:fontFamily="casual"
+        android:fontFamily="serif"
         android:text="@string/generate"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CardViewGenerate"
-        app:layout_constraintVertical_bias="0.120000005" />
-
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

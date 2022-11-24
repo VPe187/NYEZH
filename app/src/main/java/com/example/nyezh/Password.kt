@@ -3,7 +3,6 @@ package com.example.nyezh
 import java.security.SecureRandom
 
 class Password {
-
     private val lettersPoints : Float = 2F
     private val upperPoints : Float = 2F
     private val numberPoints : Float = 1F
@@ -13,7 +12,8 @@ class Password {
     private val letters : String = "abcdefghijklmnopqrstuvwxyz"
     private val uppercaseLetters : String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     private val numbers : String = "1234567890"
-    private val special : String = "[]ß#&@Ł#$=%()<>+-!?."
+    //private val special : String = "[]ß#&@Ł#$=%()<>-!?."
+    private val special : String = "ß#&@Ł#$=%<>!?."
 
     fun generate(length : Int, isLetters : Boolean, isUppercase : Boolean, isNumbers : Boolean, isSpecial : Boolean) : String {
         var result = ""
@@ -33,21 +33,21 @@ class Password {
     }
 
     fun getStrength(password : String) : Float {
-        var factor : Float = 0F
-        var length = password.length
+        var factor = 0F
+        val length = password.length
         if( password.matches( Regex(".*["+this.letters+"].*") ) ) {
-            factor += this.lettersPoints
+            factor += lettersPoints
         }
         if( password.matches( Regex(".*["+this.uppercaseLetters+"].*") ) ){
-            factor += this.upperPoints
+            factor += upperPoints
         }
         if( password.matches( Regex(".*["+this.numbers+"].*") ) ){
-            factor += this.numberPoints
+            factor += numberPoints
         }
         if( password.matches( Regex(".*["+this.special+"].*") ) ){
-            factor += this.specialPoints
+            factor += specialPoints
         }
-        return (factor*length)/(this.maxPoints*this.maxLength)
+        return ((factor*length)/(this.maxPoints*this.maxLength))*100
     }
 
 }

@@ -1,10 +1,11 @@
 <resources>
     <string name="app_name">Nyíregyházi Egyetem ZH</string>
-    <string name="contentDesc">background</string>
+    <string name="contentDesc">Háttér</string>
     <string name="settings">Beállítások</string>
-    <string name="letters">Letters</string>
-    <string name="uppercase">Uppercase</string>
-    <string name="numbers">Numbers</string>
-    <string name="generate">Generate</string>
-    <string name="specials">Specials</string>
+    <string name="letters">Betűk</string>
+    <string name="uppercase">Nagybetűk</string>
+    <string name="numbers">Számok</string>
+    <string name="generate">Generálás</string>
+    <string name="specials">Speciális jelek</string>
+    <string name="password">Jelszó</string>
 </resources>
