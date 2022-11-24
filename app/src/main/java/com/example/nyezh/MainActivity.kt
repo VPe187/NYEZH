@@ -3,14 +3,18 @@ package com.example.nyezh
 import android.annotation.SuppressLint
 import android.content.ClipData
 import android.content.ClipboardManager
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.os.Process.killProcess
 import android.view.MotionEvent
 import android.view.View
 import android.view.View.OnTouchListener
 import android.widget.*
+import androidx.activity.OnBackPressedCallback
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import kotlin.system.exitProcess
 
 
 class MainActivity : AppCompatActivity() {
@@ -26,6 +30,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val splashIntent = Intent(this@MainActivity, Splash::class.java)
+        startActivity(splashIntent)
+
         val editTextPassword : EditText = this.findViewById(R.id.editTextPassword)
         val buttonGenerate : Button = this.findViewById(R.id.buttonGenerate)
         val textViewPasswordLength : TextView = this.findViewById(R.id.textViewPasswordLength)
@@ -128,5 +136,10 @@ class MainActivity : AppCompatActivity() {
             progressBar.progress = passwordPoint
             Toast.makeText(applicationContext, "Jelszó vágólapra másolva!", Toast.LENGTH_SHORT).show()
         }
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                finishAffinity()
+            }
+        })
     }
 }

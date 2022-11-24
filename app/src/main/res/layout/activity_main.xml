@@ -79,6 +79,7 @@
                         android:fontFamily="serif"
                         android:padding="5dp"
                         android:text="@string/letters"
+                        android:textColor="@color/black"
                         tools:ignore="UseSwitchCompatOrMaterialXml" />
                 </LinearLayout>
                 <LinearLayout
@@ -94,7 +95,8 @@
                         android:fontFamily="serif"
                         android:padding="5dp"
                         android:text="@string/uppercase"
-                        tools:ignore="UseSwitchCompatOrMaterialXml"/>
+                        android:textColor="@color/black"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="0dp"
@@ -110,6 +112,7 @@
                         android:fontFamily="serif"
                         android:padding="5dp"
                         android:text="@string/numbers"
+                        android:textColor="@color/black"
                         tools:ignore="UseSwitchCompatOrMaterialXml" />
                 </LinearLayout>
 
@@ -127,6 +130,7 @@
                         android:fontFamily="serif"
                         android:padding="5dp"
                         android:text="@string/specials"
+                        android:textColor="@color/black"
                         tools:ignore="UseSwitchCompatOrMaterialXml" />
                 </LinearLayout>
 
