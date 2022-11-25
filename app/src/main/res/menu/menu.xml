@@ -34,7 +34,7 @@
         android:id="@+id/lengths"
         android:checkable="false"
         android:icon="?attr/actionModeCutDrawable"
-        android:title="Lengths">
+        android:title="@string/menu_lengths">
         <menu>
             <group android:id="@+id/length_group">
                 <item

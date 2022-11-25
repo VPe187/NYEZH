@@ -13,4 +13,5 @@
     <string name="menu_characters_uppercase">Uppercase</string>
     <string name="menu_characters_numbers">Numbers</string>
     <string name="menu_characters_specials">Specials</string>
+    <string name="menu_lengths">Lengths</string>
 </resources>

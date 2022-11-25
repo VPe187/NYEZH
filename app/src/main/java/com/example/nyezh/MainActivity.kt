@@ -21,9 +21,10 @@ class MainActivity : AppCompatActivity() {
     private var isSpecials = false
     private var passwordLength = 10
     private var maxPoint = 100
+    private var generatedPassword = ""
 
-    @SuppressLint("UseSwitchCompatOrMaterialCode")
     private lateinit var buttonGenerate : Button
+    private lateinit var buttonClipboard : Button
     @SuppressLint("UseSwitchCompatOrMaterialCode")
     private lateinit var switchLetters : Switch
     @SuppressLint("UseSwitchCompatOrMaterialCode")
@@ -48,6 +49,7 @@ class MainActivity : AppCompatActivity() {
 
         this.editTextPassword = this.findViewById(R.id.editTextPassword)
         this.buttonGenerate = this.findViewById(R.id.buttonGenerate)
+        this.buttonClipboard = this.findViewById(R.id.buttonClipboard)
         this.textViewPasswordLength = this.findViewById(R.id.textViewPasswordLength)
         this.switchLetters = this.findViewById(R.id.switchLetters)
         this.switchUppercase = this.findViewById(R.id.switchUppercase)
@@ -61,6 +63,7 @@ class MainActivity : AppCompatActivity() {
         this.progressBar.progress = 1
         this.editTextPassword.isEnabled = false
         this.buttonGenerate.isEnabled = false
+        this.buttonClipboard.isEnabled = false
         this.textViewPasswordLength.text = passwordLength.toString()
         var isTouched = false
 
@@ -148,12 +151,18 @@ class MainActivity : AppCompatActivity() {
             val generatedPassword = password.generate(passwordLength, isLetters, isUppercase, isNumbers, isSpecials)
             val passwordPoint = password.getStrength(generatedPassword).toInt()
             editTextPassword.setText(generatedPassword)
-            val clipboard: ClipboardManager = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
-            val clip = ClipData.newPlainText("password", generatedPassword)
-            clipboard.setPrimaryClip(clip)
             progressBar.progress = passwordPoint
+            this.buttonClipboard.isEnabled = true
+
+        }
+
+        buttonClipboard.setOnClickListener {
+            val clipboard: ClipboardManager = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
+            val clip = ClipData.newPlainText("password", this.generatedPassword)
+            clipboard.setPrimaryClip(clip)
             Toast.makeText(applicationContext, "Jelszó vágólapra másolva!", Toast.LENGTH_SHORT).show()
         }
+
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 finishAffinity()

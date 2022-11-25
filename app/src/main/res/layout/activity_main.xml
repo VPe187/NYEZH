@@ -225,7 +225,9 @@
             app:layout_constraintTop_toTopOf="@+id/textViewPasswordHeader"
             tools:ignore="LabelFor,TextFields" />
         </LinearLayout>
+
     </androidx.cardview.widget.CardView>
+
     <ProgressBar
         android:id="@+id/progressBarPoints"
         style="?android:attr/progressBarStyleHorizontal"
@@ -237,20 +239,42 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CardViewGenerate" />
 
-    <Button
-        android:id="@+id/buttonGenerate"
-        style="@style/Widget.AppCompat.Button"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="120dp"
-        android:fontFamily="serif"
-        android:text="@string/generate"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:baselineAligned="false"
+        android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CardViewGenerate"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/progressBarPoints">
+
+        <Button
+            android:id="@+id/buttonGenerate"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:drawableLeft="@android:drawable/ic_popup_sync"
+            android:fontFamily="serif"
+            android:text="@string/generate"
+            android:textColor="@color/white"
+            app:iconPadding="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/progressBarPoints"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/buttonClipboard"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:drawableLeft="@android:drawable/ic_menu_edit"
+            app:icon="?attr/actionModePasteDrawable"
+            app:iconGravity="textEnd"
+            app:iconPadding="1dp"
+            app:iconTint="@color/white" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

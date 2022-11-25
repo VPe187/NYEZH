@@ -8,4 +8,10 @@
     <string name="generate">Generálás</string>
     <string name="specials">Speciális jelek</string>
     <string name="password">Jelszó</string>
+    <string name="menu_characters">Karakterek</string>
+    <string name="menu_characters_letters">Betűk</string>
+    <string name="menu_characters_uppercase">Nagybetűk</string>
+    <string name="menu_characters_numbers">Számok</string>
+    <string name="menu_characters_specials">Speciális</string>
+    <string name="menu_lengths">Hossz</string>
 </resources>
