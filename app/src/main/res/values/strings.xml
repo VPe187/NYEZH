@@ -8,4 +8,9 @@
     <string name="generate">Generate</string>
     <string name="specials">Specials</string>
     <string name="password">Password</string>
+    <string name="menu_characters">Characters</string>
+    <string name="menu_characters_letters">Letters</string>
+    <string name="menu_characters_uppercase">Uppercase</string>
+    <string name="menu_characters_numbers">Numbers</string>
+    <string name="menu_characters_specials">Specials</string>
 </resources>
